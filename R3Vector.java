@@ -16,17 +16,25 @@ public class R3Vector {
         this.y = y;
         this.z = z;
     }
-    public static void slozheniye(R3Vector a, R3Vector b) {
+    public R3Vector(double x1, double y1, double z1) {
+        this.x = x1;
+        this.y = y1;
+        this.z = z1;
+    }
+    public static R3Vector slozheniye(R3Vector a, R3Vector b) {
         System.out.println("Координаты нового вектора, полученного из суммы вектора a и вектора b, равны => " + (a.x + b.x) + "; " + (a.y + b.y) + "; " + (a.z + b.z));
+        return new R3Vector(a.x + b.x, a.y + b.y, a.z + b.z);
     }
-    public static void vichitaniye(R3Vector a, R3Vector b) {
+    public static R3Vector vichitaniye(R3Vector a, R3Vector b) {
         System.out.println("Координаты нового вектора, полученного из разности вектора a и вектора b, равны => " + (a.x - b.x) + "; " + (a.y - b.y) + "; " + (a.z - b.z));
+        return new R3Vector(a.x - b.x, a.y - b.y, a.z - b.z);
     }
-    public static void nachislo(R3Vector a) {
+    public static R3Vector nachislo(R3Vector a) {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите число для умножения => ");
         double n = in.nextDouble();
         System.out.println("Координаты нового вектора, полученного из умножения вектора a на число n, равны => " + (a.x * n) + "; " + (a.y * n) + "; " + (a.z * n));
+        return new R3Vector(a.x * n, a.y * n, a.z * n);
     }
     public static void skalyarnoe(R3Vector a, R3Vector b) {
         System.out.println("Скалярное произведение вектора a и вектора b равно => " + (a.x * b.x + a.y * b.y + a.z * b.z));
